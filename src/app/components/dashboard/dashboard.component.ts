@@ -20,7 +20,13 @@ export class DashboardComponent implements OnInit {
       disablePushOnDrag: true,
       draggable: { enabled: true },
       gridType: GridType.Fit,
-      resizable: { enabled: true }
+      resizable: { enabled: true },
+      displayGrid: DisplayGrid.None,
+      itemResizeCallback: (item) => {
+        // update DB with new size
+        // send the update to widgets 发送请求
+        console.log(item);
+      }
     };
     this.items = [
       {
