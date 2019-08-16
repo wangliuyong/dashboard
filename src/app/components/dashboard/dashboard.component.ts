@@ -24,22 +24,22 @@ export class DashboardComponent implements OnInit {
     };
     this.items = [
       {
+        id: '0',
+        name: 'Timeline',
+        component: 'timeline',
+        cols: 2,
+        rows: 2,
+        y: 2,
+        x: 2
+      },
+      {
         id: '1',
         name: 'Timeline',
         component: 'timeline',
-        cols: 8,
-        rows: 6,
-        y: 0,
-        x: 0
-      },
-      {
-        id: '2',
-        name: 'Timeline',
-        component: 'timeline',
-        cols: 20,
-        rows: 10,
-        y: 2,
-        x: 2
+        cols: 1,
+        rows: 2,
+        y: 4,
+        x: 4
       }
     ];
   }

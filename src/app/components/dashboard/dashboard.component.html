@@ -1,10 +1,10 @@
-<gridster [options]="options">
+<gridster [options]="options" style="height: 500px;border: 1ps solid green">
 
-  <ng-container *ngFor="let item of items">
+  <ng-container *ngFor="let item of items;let key = index">
 
     <gridster-item [item]="item">
 
-      <div style="height: 10px;width:10px;border:1px solid red">2</div>
+      <div style="height: 10px;width:10px;border:1px solid red">{{key}}</div>
 
     </gridster-item>
 
