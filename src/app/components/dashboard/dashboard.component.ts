@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { DashboardConfig, DashboardWidget, DisplayGrid, GridType} from '../../models/models';
 
@@ -10,6 +10,7 @@ import { DashboardConfig, DashboardWidget, DisplayGrid, GridType} from '../../mo
 export class DashboardComponent implements OnInit {
   public options: DashboardConfig;
   public items: DashboardWidget[];
+  resizeEvent: EventEmitter<any> = new EventEmitter<any>();
 
   protected subscription: Subscription;
 
@@ -24,7 +25,11 @@ export class DashboardComponent implements OnInit {
       displayGrid: DisplayGrid.None,
       itemResizeCallback: (item) => {
         // update DB with new size
-        // send the update to widgets 发送请求
+        // send the update to widgets 更新widget
+        this.resizeEvent.emit(item);
+        console.log(item);
+      },
+      itemChangeCallback: (item) => {
         console.log(item);
       }
     };
