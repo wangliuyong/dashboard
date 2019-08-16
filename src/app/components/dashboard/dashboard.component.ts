@@ -25,17 +25,18 @@ export class DashboardComponent implements OnInit {
       displayGrid: DisplayGrid.None,
       itemResizeCallback: (item) => {
         // update DB with new size
-        // send the update to widgets 更新widget
+        // send the update to widgets
         this.resizeEvent.emit(item);
-        console.log(item);
+        // console.log(item);
       },
       itemChangeCallback: (item) => {
+        // 更新widget, 重新赋值操作
         console.log(item);
       }
     };
     this.items = [
       {
-        id: '0',
+        id: '1',
         name: 'Timeline',
         component: 'timeline',
         cols: 2,
@@ -44,10 +45,19 @@ export class DashboardComponent implements OnInit {
         x: 2
       },
       {
-        id: '1',
+        id: '2',
         name: 'Timeline',
         component: 'timeline',
         cols: 1,
+        rows: 2,
+        y: 4,
+        x: 4
+      },
+      {
+        id: '3',
+        name: 'Timeline',
+        component: 'timeline',
+        cols: 3,
         rows: 2,
         y: 4,
         x: 4
