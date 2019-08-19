@@ -99,8 +99,8 @@ export class DashboardComponent implements OnInit {
       displayGrid: DisplayGrid.Always,
       setGridSize: true,
       keepFixedHeightInMobile: true,
-      // fixedColWidth: 250,
-      fixedRowHeight: 50,
+      // fixedColWidth: 250, // 列宽
+      fixedRowHeight: 50, // 行高
       margin: 24,
       maxCols: 6,
       minCols: 6,
